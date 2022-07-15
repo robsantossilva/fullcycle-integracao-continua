@@ -23,3 +23,27 @@ garantindo mais agilidade e segurança no processo de desenvolvimento de um soft
 - Azure DevOps
 - Google Cloud Build
 - GitLab Pipelines / CI
+
+### Github Actions
+Automate your worlflow from idea to production
+
+O Github Actions é um automatizador de workflow de desenvolvimento de software.
+Ele utiliza os principais eventos gerados pelo GitHub para que possamos executar tarefas dos mais variadostipos, incluindo processos de CI.
+
+### Workflow
+- São conjunto de processos definidos por você. Ex: Fazer o build + rodar os testes da aplicação
+- É possível ter mais do que um workflow por repositório
+- Definidos em arquivos ".yml" em .github/workflows
+- Possui um ou mais "Jobs"
+- É iniciado baseado em eventos do GitHub ou através de agendamento
+
+| Evento   | Filtros              | Ambiente        | Ações                                                         |
+| -------- | -------------------- | --------------- | ------------------------------------------------------------- |
+| on: push | branchs:<br>- master | runs-on: ubuntu | steps:<br>- uses: action/runs-composer<br>- run: npm run prod |
+
+### Actions
+É a ação que de fato será executada em um dos Steps de um Job em um Workflow.
+Ela pode ser criada do zero ou ser reutilizada de actions pre-existentes.
+**Action pode ser desenvolvida:**
+- Javascript
+- Docker Image
