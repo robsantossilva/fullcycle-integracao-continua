@@ -49,3 +49,22 @@ Ela pode ser criada do zero ou ser reutilizada de actions pre-existentes.
 - Docker Image
 
 https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration
+
+### Strategy Matrix
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [ '1.14', '1.13' ]
+    name: Go ${{ matrix.go }} sample
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+      - run: go run hello.go
+```
