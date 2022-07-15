@@ -47,3 +47,5 @@ Ela pode ser criada do zero ou ser reutilizada de actions pre-existentes.
 **Action pode ser desenvolvida:**
 - Javascript
 - Docker Image
+
+https://docs.github.com/pt/actions/automating-builds-and-tests/about-continuous-integration
