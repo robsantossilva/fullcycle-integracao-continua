@@ -16,7 +16,7 @@ jobs:
           go-version: 1.15
           # go-version: ${{ matrix.go }}
       - run: go test
-      - run: go run math.g
+      - run: go run math.go
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
