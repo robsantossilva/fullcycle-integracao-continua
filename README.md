@@ -72,3 +72,24 @@ jobs:
 ### Build and push Docker images
 https://github.com/marketplace/actions/build-and-push-docker-images
 
+### Sonarqube
+
+```bash
+docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+```
+Once your instance is up and running, Log in to http://localhost:9000 using System Administrator credentials:
+
+login: **admin**
+password: **admin**
+
+```bash
+cd go
+
+sonar-scanner \
+  -Dsonar.projectKey=fullcycle-integracao-continua \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=sqp_89d6f234786694bf82ea88bd9c96acbf80e5e89c
+```
+
+### SonarCloud
